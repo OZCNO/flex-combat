@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>flex实战-网格布局</title>
+	<style type="text/css" media="screen">
+	body{
+		background-color: #f5f5d5;
+	}
+	.grid{
+		width:70%;
+		height:auto;
+		border: 5px solid #ccc;
+		border-radius:10px;
+		margin:10px auto;
+		/*padding:0px 10px;*/
+		background-color: #fff;
+		display:flex;
+		display: -webkit-flex;
+		flex-wrap:wrap;
+		justify-content: center;
+		align-content: space-around;
+	}
+	.grid-cell{
+		width:100%;
+
+		display:flex;
+		display: -webkit-flex;
+		justify-content: space-around;
+		flex-wrap: nowrap;
+	}		
+	.grid-content{
+		background-color: #f4f3f0;
+		min-height:50px;
+		min-width:150px;
+		margin:15px;
+		padding:5px 10px;
+		flex: 1;
+	}
+	/*非平均分布,flex为1的grid-content类已经写了*/
+	.eg2 .grid-cell:nth-child(1) .grid-content:nth-child(1){
+		flex:2;
+	}
+	.eg2 .grid-cell:nth-child(2) .grid-content:nth-child(1){
+		flex:2;
+	}
+	.eg2 .grid-cell:nth-child(3) .grid-content:nth-child(1){
+		flex:3;
+	}
+	.eg2 .grid-cell:nth-child(3) .grid-content:nth-child(2){
+		flex:5;
+	}
+	.eg2 .grid-cell:nth-child(3) .grid-content:nth-child(3){
+		flex:4;
+	}
+
+
+	/*某个格子的flex-basis，也即占据的大小固定比例，其他auto*/
+	.eg3 .grid-cell:nth-child(1) .grid-content:nth-child(1){
+		flex:0 0 50%;
+	}
+	.eg3 .grid-cell:nth-child(2) .grid-content:nth-child(2){
+		flex:0 0 33.3333%;
+	}
+	.eg3 .grid-cell:nth-child(3) .grid-content:nth-child(1){
+		flex:0 0 25%;
+	}
+	.eg3 .grid-cell:nth-child(3) .grid-content:nth-child(3){
+		flex:0 0 33.3333%;
+	}
+	</style>
+</head>
+<body>
+<!-- 平均分布 -->
+	<div class="grid eg1">
+		<div class="grid-cell">
+			<div class="grid-content">1/2</div>	
+			<div class="grid-content">1/2</div>	
+		</div>
+		<div class="grid-cell">
+			<div class="grid-content">1/3</div>	
+			<div class="grid-content">1/3</div>	
+			<div class="grid-content">1/3</div>	
+		</div>
+		<div class="grid-cell">
+			<div class="grid-content">1/4</div>	
+			<div class="grid-content">1/4</div>		
+			<div class="grid-content">1/4</div>	
+			<div class="grid-content">1/4</div>
+		</div>
+		<div class="grid-cell">
+			<div class="grid-content">She had been shopping with her Mom in Wal-Mart. She must have been 6 years old, this beautiful brown haired, freckle-faced image of innocence. It was pouring outside. The kind of rain that gushes over the top of rain gutters, so much in a hurry to hit the Earth, it has no time to flow down the spout.</div>	
+			<div class="grid-content">她和妈妈刚在沃尔玛结束购物。这个天真的小女孩应该6岁大了，头发是美丽的棕色，脸上有雀斑。外面下着倾盆大雨。雨水溢满了檐槽，来不及排走，就迫不及待地涌涨上地面。</div>	
+		</div>
+	</div>
+<!-- 某个网格的宽度为固定的百分比，其余网格平均分配剩余的空间。 -->
+	<div class="grid eg2">
+		<div class="grid-cell">
+			<div class="grid-content">包括所有边距大小为1/2</div>	
+			<div class="grid-content">auto</div>	
+			<div class="grid-content">auto</div>	
+		</div>
+		<div class="grid-cell">
+			<div class="grid-content">auto</div>	
+			<div class="grid-content">包括所有边距大小为1/3</div>	
+		</div>
+		<div class="grid-cell">
+			<div class="grid-content">包括所有边距大小为1/4</div>		
+			<div class="grid-content">auto</div>	
+			<div class="grid-content">包括所有边距大小为1/3</div>
+		</div>
+	</div>	
+	<div class="grid eg3">
+		<div class="grid-cell">
+			<div class="grid-content">正文大小为1/2</div>	
+			<div class="grid-content">auto</div>	
+			<div class="grid-content">auto</div>	
+		</div>
+		<div class="grid-cell">
+			<div class="grid-content">auto</div>	
+			<div class="grid-content">正文大小为1/3</div>	
+		</div>
+		<div class="grid-cell">
+			<div class="grid-content">正文大小为1/4</div>		
+			<div class="grid-content">auto</div>	
+			<div class="grid-content">正文大小为1/3</div>
+		</div>
+	</div>
+</body>
+</html>
