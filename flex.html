@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>flex实战-骰子</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		body{
+			background-color: #f5f5d5;
+		}
+		.flex-container{
+			width:70%;
+			height:auto;
+			border: 5px solid #ccc;
+			border-radius:10px;
+			margin:0 auto;
+			display: flex;
+			display: -webkit-flex;
+			/*default value*/
+			flex-direction: row;
+			flex-wrap:wrap;
+			justify-content: center;
+			/*align-items: flex-start;
+			align-content: flex-start;*/
+			background-color: black;
+		}
+		.flex-item{
+			width:80px;
+			height:80px;
+			border: 5px solid #ccc;
+			border-radius:5px;
+			flex:none;
+			/*不放大，不缩小，不增加多余size*/
+			background-color: #e7e7e7;
+			display: flex;
+			display: -webkit-flex;
+			margin:20px;
+			padding: 5px;
+		}
+		.circle{
+			width:0px;
+			height:0px;
+			border:10px solid #00a;
+			border-radius:50%;
+		}
+		.item1{
+			/*default value*/
+			/*flex-flow:row wrap;*/
+			justify-content: center;
+			align-items: center;
+		}
+		.item2{
+			flex-direction:column;
+			justify-content: center;	
+			align-items: center;		
+		}
+		.item3{
+			/*default value*/
+			/*flex-direction:row;*/
+			justify-content: space-around;
+			align-items: center;
+		}
+		.item2 .circle{
+			margin:10px;
+		}
+		/*item3的3个圆点的交叉轴对齐方向各不相同*/
+		.circle31{
+			align-self:flex-start;
+		}
+		/*与容器定义的item对齐方式一致*/
+		/*.circle32{
+			align-self:center;
+		}*/
+		.circle33{
+			align-self:flex-end;
+		}
+		.item4,.item5,.item6{
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		.column{
+			width:100%;
+			display: flex;
+			display: -webkit-flex;
+			justify-content: space-between;
+		}
+		.column52{
+			justify-content: center;
+		}
+		.item6 .column{
+			justify-content: space-around;
+		}
+	</style>
+</head>
+<body>
+	<div class="flex-container">
+		<div class="flex-item item1">
+			<span class="circle"></span>
+		</div>
+		<div class="flex-item item2">
+			<span class="circle"></span>
+			<span class="circle"></span>
+		</div>
+		<div class="flex-item item3">
+			<span class="circle circle31"></span>
+			<span class="circle circle32"></span>
+			<span class="circle circle33"></span>
+		</div>
+		<div class="flex-item item4">
+			<div class="column">
+				<span class="circle"></span>
+				<span class="circle"></span>
+			</div>
+			<div class="column">
+				<span class="circle"></span>
+				<span class="circle"></span>
+			</div>
+		</div>
+		<div class="flex-item item5">
+			<div class="column">
+				<span class="circle"></span>
+				<span class="circle"></span>
+			</div>
+			<div class="column column52">
+				<span class="circle"></span>
+			</div>
+			<div class="column">
+				<span class="circle"></span>
+				<span class="circle"></span>
+			</div>
+		</div>
+		<div class="flex-item item6">
+			<div class="column">
+				<span class="circle"></span>
+				<span class="circle"></span>
+			</div>
+			<div class="column">
+				<span class="circle"></span>
+				<span class="circle"></span>
+			</div>
+			<div class="column">
+				<span class="circle"></span>
+				<span class="circle"></span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

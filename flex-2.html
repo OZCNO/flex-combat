@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>flex实战2</title>
+</head>
+<style type="text/css" media="screen">
+	body{
+		background-color: #f5f5d5;
+	}
+	.box{
+		width:70%;
+		height:auto;
+		border: 5px solid #ccc;
+		border-radius:10px;
+		margin:0 auto;
+		background-color: #292929;
+
+		display: flex;
+		display: -webkit-flex;
+		flex-wrap:wrap;
+		justify-content: center;
+	}
+	.item{
+		width:80px;
+		height:80px;
+		border: 5px solid #fff;
+		border-radius:5px;
+		background-color: #e7e7e7;
+		margin:20px;
+
+		flex:none;
+		display: flex;
+		display: -webkit-flex;
+	}
+	.circle{
+		width:0px;
+		height:0px;
+		border:12px solid #333;
+		border-radius:50%;
+		/*设置好margin，保证正常放下9个圆点时，均匀分布*/
+		margin: 1.3px;
+	}
+	.item:nth-child(2){
+		justify-content: center;
+	}
+	.item:nth-child(3){
+		justify-content: flex-end;
+	}
+	.item:nth-child(4){
+		align-items: center;
+	}
+	.item:nth-child(5){
+		justify-content: center;
+		align-items: center;
+	}
+	.item:nth-child(6){
+		justify-content: center;
+		align-items: flex-end;
+	}
+	.item:nth-child(7){
+		justify-content: flex-end;
+		align-items: flex-end;
+	}
+	/*双项目*/
+	.item:nth-child(8){
+		justify-content: space-between;
+	}
+	.item:nth-child(9){
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.item:nth-child(10){
+		flex-direction: column;
+		justify-content: space-between;
+		align-items:center;
+	}
+	.item:nth-child(10){
+		flex-direction: column;
+		justify-content: space-between;
+		align-items:flex-end;
+	}
+	.item:nth-child(11) .circle:nth-child(2){
+		align-self:center;
+	}
+	.item:nth-child(12){
+		justify-content: space-between;
+	}
+	.item:nth-child(12) .circle:nth-child(2){
+		align-self: flex-end;
+	}
+	/*三项目*/
+	.item:nth-child(13) .circle:nth-child(2){
+		align-self: center;
+	}
+	.item:nth-child(13) .circle:nth-child(3){
+		align-self: flex-end;
+	}
+	/*四项目*/
+	.item:nth-child(14){
+		justify-content: flex-end;
+		/*注意此处不是设置align-items*/
+		align-content:space-between;
+		flex-wrap:wrap;
+	}
+	.item:nth-child(15){
+		flex-wrap:wrap;
+		align-content:space-between;
+	}
+	.item:nth-child(15) .row{
+		/*这是设置这行内的flex布局*/
+		display:flex;
+		display: -webkit-flex;
+		width:100%;
+		justify-content: space-between;
+	}
+	/*六项目*/
+	.item:nth-child(16){
+		flex-wrap:wrap;
+		align-content:space-between;
+	}
+	.item:nth-child(17){
+		flex-direction: column;
+		align-content: space-between;
+		flex-wrap:wrap;
+	}
+	.item:nth-child(18){
+		flex-wrap:wrap;
+	}
+	.item:nth-child(18) .row{
+		width:100%;
+		display: flex;
+		display: -webkit-flex;
+	}
+	.item:nth-child(18) .row:nth-child(2){
+		justify-content: center;
+	}
+	.item:nth-child(18) .row:nth-child(3){
+		justify-content: space-between;
+	}
+	/*九项目*/
+	.item:nth-child(19){
+		flex-wrap:wrap;
+	}
+
+</style>
+<body>
+	<div class="box">
+	<!-- 单项目 -->
+		<div class="item">
+			<span class="circle"></span>
+		</div>
+		<div class="item">
+			<span class="circle"></span>
+		</div>
+		<div class="item">
+			<span class="circle"></span>
+		</div>
+		<div class="item">
+			<span class="circle"></span>
+		</div>
+		<div class="item">
+			<span class="circle"></span>
+		</div>
+		<div class="item">
+			<span class="circle"></span>
+		</div>
+		<div class="item">
+			<span class="circle"></span>
+		</div>
+	<!-- 双项目 -->
+		<div class="item">
+			<span class="circle"></span>
+			<span class="circle"></span>
+		</div>
+		<div class="item">
+			<span class="circle"></span>
+			<span class="circle"></span>
+		</div>
+		<div class="item">
+			<span class="circle"></span>
+			<span class="circle"></span>
+		</div>
+		<div class="item">
+			<span class="circle"></span>
+			<span class="circle"></span>
+		</div>
+		<div class="item">
+			<span class="circle"></span>
+			<span class="circle"></span>
+		</div>
+	<!-- 三项目 -->
+		<div class="item">
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+		</div>
+	<!-- 四项目 -->
+		<div class="item">
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+		</div>
+		<div class="item">
+			<div class="row">
+				<span class="circle"></span>
+				<span class="circle"></span>
+			</div>
+			<div class="row">
+				<span class="circle"></span>
+				<span class="circle"></span>
+			</div>
+		</div>
+	<!-- 六项目 -->	
+		<div class="item">
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+		</div>
+		<div class="item">
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+		</div>
+		<div class="item">
+			<div class="row">
+				<span class="circle"></span>
+				<span class="circle"></span>
+				<span class="circle"></span>
+			</div>
+			<div class="row">
+				<span class="circle"></span>
+			</div>
+
+			<div class="row">
+				<span class="circle"></span>
+				<span class="circle"></span>
+			</div>
+		</div>
+	<!-- 九项目 -->
+		<div class="item">
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+			<span class="circle"></span>
+		</div>
+	</div>
+</body>
+</html>
