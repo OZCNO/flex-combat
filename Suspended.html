@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>flex实战-悬挂式布局</title>
+</head>
+<style type="text/css" media="screen">
+	*{
+		padding:0;
+		margin:0;
+	}
+	h3,h1,p{
+		margin:10px 0;
+		font-family:Times New Roman;
+	}
+	body{
+		background-color: #f5f5d5;
+	}
+	.layout{
+		width:70%;
+		height:auto;
+		border: 5px solid #f4f3f0;
+		border-radius:10px;
+		margin:50px auto;
+		padding:10px;
+		background-color: #fff;
+	}
+	.big-flex{
+		display: -webkit-flex;
+		display: flex;
+	}
+	.flex-container{
+		display: -webkit-flex;
+		display: flex;
+		background-color: #f4f3f0;
+		margin: 20px 10px;
+	}
+	img{
+		width:6.4em;
+		height:4em;
+		padding:10px;
+		vertical-align: top;
+	}
+</style>
+<body>
+	<div class="layout">
+		<h1>Basic Examples</h1>
+		<div class="big-flex">
+			<div>
+				<div class="flex-container">
+					<img src="img/happy.jpg" alt="">
+					<div class="content">
+						<h3>The happy door</h3><p>Happiness is like a pebble dropped into a pool to set in motion an ever-widening circle of ripples. As Stevenson has said, being happy is a duty.</p><p>There is no exact definition of the word happiness. Happy people are happy for all sorts of reasons. The key is not wealth or physical well-being, since we find beggars, invalids and so-called failures, who are extremely happy.</p>
+					</div>
+				</div>
+				<div class="flex-container">
+					<img src="img/happy.jpg" alt="">
+					<div class="content">
+						<h3>The happy door</h3><p>Happiness is like a pebble dropped into a pool to set in motion an ever-widening circle of ripples. As Stevenson has said, being happy is a duty.</p>
+					</div>
+				</div>
+			</div>
+			<div class="flex-container">
+				<img src="img/happy.jpg" alt="">
+				<div class="content">
+					<h3>The happy door</h3><p>Happiness is like a pebble dropped into a pool to set in motion an ever-widening circle of ripples. As Stevenson has said, being happy is a duty.</p><p>There is no exact definition of the word happiness. Happy people are happy for all sorts of reasons. The key is not wealth or physical well-being, since we find beggars, invalids and so-called failures, who are extremely happy.</p><p>Being happy is a sort of unexpected dividend. But staying happy is an accomplishment, a triumph of soul and character. It is not selfish to strive for it. It is, indeed, a duty to ourselves and others.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
