@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>flex实战-输入框</title>
+	<style type="text/css" media="screen">
+	.InputAddOn{
+		display: -webkit-flex;
+		display: flex;
+		width:30em;
+		margin:100px auto;
+	}
+	.InputAddOn-item{
+		background-color:#f4f3f0;
+		border:1px solid #e4e0db;
+		padding:2px 4px;
+		color:#8b8b8a;
+		font-size: 2em;
+	}
+	.InputAddOn-item img{
+		width:2em;
+		vertical-align: middle;
+	}
+	.InputAddOn-field{
+		border:1px solid #e4e0db;
+		flex:1;
+		font-size:18px;
+		text-align: right;
+		color: #77bbdd;
+	}
+	</style>
+</head>
+<body>
+	<div class="InputAddOn">
+	  <div class="InputAddOn-item">
+		<img src="img/email.png" alt="">
+	  </div>
+	  <input class="InputAddOn-field">
+	  <button class="InputAddOn-item">Send</button>
+	</div>
+</body>
+</html>
